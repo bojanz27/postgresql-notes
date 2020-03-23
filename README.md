@@ -9,6 +9,8 @@ Scaffold-DbContext "Host=localhost;Database=mydatabase;Username=myuser;Password=
 
 ### PostgreSQL switch case
 
+##### variant 1
+
 ```
 DO $$
 DECLARE opt integer;
@@ -34,4 +36,16 @@ BEGIN
 	raise notice 'Value: %', date_trunc(date_opt, cur_d);
 END $$;
 
+```
+
+##### variant 2
+
+```
+case p_opt_agg_res
+when 1 then l_interval := 'day';
+when 2 then l_interval := 'week';
+when 3 then l_interval := 'month';
+when 4 then l_interval := 'year';
+else l_interval := 'day';
+end case;
 ```
