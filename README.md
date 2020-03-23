@@ -7,6 +7,15 @@ Just a c/p of handly postgres commands and related
 Scaffold-DbContext "Host=localhost;Database=mydatabase;Username=myuser;Password=mypassword" Npgsql.EntityFrameworkCore.PostgreSQL -o Models
 ```
 
+### PostgreSQL script
+```
+DO $$
+<declares...>
+BEGIN
+<logic...>
+END $$;
+```
+
 ### PostgreSQL switch case
 
 ##### variant 1
