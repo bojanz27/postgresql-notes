@@ -58,3 +58,14 @@ when 4 then l_interval := 'year';
 else l_interval := 'day';
 end case;
 ```
+
+### Drop database
+
+UPDATE pg_database SET datallowconn = 'false' WHERE datname = 'dbname';
+
+SELECT pg_terminate_backend(pid)
+FROM pg_stat_activity
+WHERE datname = 'dbname';
+
+drop database dbname;
+
