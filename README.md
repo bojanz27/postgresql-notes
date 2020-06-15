@@ -69,3 +69,9 @@ WHERE datname = 'dbname';
 
 drop database dbname;
 
+### Script db schema DDL
+
+pg_dumpall -h localhost -p 5432 -U postgres -s -O > "E:\backup4.sql"
+
+-s : schema only
+-O : do not include SET OWNER commands 
