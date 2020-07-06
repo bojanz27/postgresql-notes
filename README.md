@@ -75,3 +75,13 @@ pg_dumpall -h localhost -p 5432 -U postgres -s -O > "E:\backup4.sql"
 
 -s : schema only
 -O : do not include SET OWNER commands 
+
+### Backup and restore 
+
+1 - Backup database
+====================
+pg_dump -h localhost -p 5432 -U postgres -O -f "D:\\db-backups\\uniout_uat_2020_6_7_-_3_37.sql" uniout_uat
+
+2 - Restore database - db must be created first!
+================================================
+psql -f -U postgres "D:\\db-backups\\uniout_uat_2020_6_7_-_3_37.sql" uniout_staging_uat_backup_7_6_2020
