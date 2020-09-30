@@ -79,7 +79,19 @@ pg_dumpall -h localhost -p 5432 -U postgres -s -O > "E:\backup4.sql"
 ### Backup and restore 
 
 ##### 1 - Backup database
+
+###### SQL backup
 pg_dump -h localhost -p 5432 -U postgres -O -f "D:\\db-backups\\uniout_uat_2020_6_7_-_3_37.sql" uniout_uat
+
+###### Custom format backup (more flexible! - restore with pg_restore)
+pg_dump -h localhost -p 5432 -U postgres -O -x -Fc -f "D:\db-backups\archiver_production_2020_9_29_-_9_17.dump" archiver_production
+
+-O (--no-owner)
+-F (--format)
+	option c (custom) - for restoring with pg_restore. Compressed.
+
+-x (--no-privileges) - Prevent dumping of access privileges (grant/revoke commands).
+
 
 ##### 2 - Restore database - db must be created first!
 psql -f -U postgres "D:\\db-backups\\uniout_uat_2020_6_7_-_3_37.sql" uniout_staging_uat_backup_7_6_2020
