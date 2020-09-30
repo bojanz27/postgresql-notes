@@ -96,7 +96,7 @@ pg_dump -h localhost -p 5432 -U postgres -O -x -Fc -f "D:\db-backups\archiver_pr
 ##### 2 - Restore database - db must be created first!
 
 ###### Restore from text file (sql)
-psql -f -U postgres "D:\\db-backups\\uniout_uat_2020_6_7_-_3_37.sql" uniout_staging_uat_backup_7_6_2020
+psql -U postgres -f "D:\\db-backups\\uniout_uat_2020_6_7_-_3_37.sql" uniout_staging_uat_backup_7_6_2020
 
 ###### Restore from archive
 pg_restore -O -x -1 -U postgres -d restore-target-db-name dumpfile.dump
