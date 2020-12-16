@@ -104,4 +104,10 @@ pg_restore -O -x -1 -U postgres -d restore-target-db-name dumpfile.dump
 -1
  --single-transaction
  Execute the restore as a single transaction.
+ 
+ ### Min and Max size of bytea in kB
+ 
+ select pg_size_pretty(min (octet_length(file_binary))::numeric) from public.document_attachment
+ 
+ select pg_size_pretty(max (octet_length(file_binary))::numeric) from public.document_attachment
 
