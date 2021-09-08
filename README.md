@@ -1,5 +1,5 @@
 # postgresql-notes
-Just a c/p of handy postgres commands and related 
+Just a c/p of handy postgres commands and PG-related stuff 
 
 ### Scaffold PostgreSQL EFCore DbContext (package manager console)
 
